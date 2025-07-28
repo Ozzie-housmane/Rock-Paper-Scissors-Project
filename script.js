@@ -6,13 +6,13 @@ function getComputerChoice() {
     // sets computer possible choices
     const choice = ["Rock","Paper", "Scissors" ]
     console.log(choice[1])
-    if (randomNumber >= 4){
+    if (randomNumber <= 4){
         console.log(choice[0]);
-    } else if (randomNumber >= 7 ) {
+    } else if (randomNumber <= 7 ) {
         console.log(choice[1]);
     } else {
         console.log(choice[2]);
     }
-
+    
 }
 getComputerChoice()
