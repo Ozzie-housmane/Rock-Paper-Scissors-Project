@@ -4,14 +4,15 @@ function getComputerChoice() {
     let randomNumber = Math.floor(Math.random()* 3) + 1;
     console.log(randomNumber);
     // sets computer possible choices
-    const choice = ["Rock","Paper", "Scissors" ]
-    console.log(choice[1])
+    let choice_1 = "Rock";
+        choice_2 = "paper";
+        choice_3 = "Scissors";
     if (randomNumber === 1){
-        console.log(choice[0]);
+        console.log(choice_1);
     } else if (randomNumber === 2 ) {
-        console.log(choice[1]);
+        console.log(choice_2);
     } else {
-        console.log(choice[2]);
+        console.log(choice_3);
     }
 
 }
