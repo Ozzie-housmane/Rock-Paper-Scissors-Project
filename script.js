@@ -48,18 +48,33 @@ function playround (humanChoice, computerChoice) {
         console.log("It's a draw!"); }
         else if (humanChoice === "rock" && computerChoice === "paper") {
         console.log("You lose paper beats rock");
+        // update Computer score when computer wins a round
+        computerScore ++;
     }   else if (humanChoice === "paper" && computerChoice === "scissors"){
         console.log("You lose scissors beats paper");
+        // update Computer score when computer wins a round
+        computerScore ++;
     }   else if (humanChoice === "scissors" && computerChoice === "rock"){
         console.log("You lose rock beats scissors");
+        // update Computer score when computer wins a round
+        computerScore ++;
     }   else if (humanChoice === "paper" && computerChoice === "rock"){
         console.log("You win paper beats rock");
+        // update Human score when computer wins a round
+        humanScore ++;
     }   else if (humanChoice === "rock" && computerChoice === "scissors"){
         console.log("You win rock beats scissors")
-    }   else {
+        // update Human score when computer wins a round
+        humanScore ++;
+    }   else if (humanChoice === "scissors" && computerChoice === "paper") {
         console.log("You win scissors beats paper")
+        // update Human score when computer wins a round
+        humanScore ++;
+    } else {
+        console.log("input value is Rock, Paper or Scissors")
     }
-        
+    // output the score for each round
+    console.log("Score: Human = " + humanScore + ", Computer = " + computerScore);
 }
 // pass and stores the return value of human and computer choice into the variable "humanSelection" and "computerSelection"
  const humanSelection = getHumanChoice();
@@ -67,5 +82,14 @@ function playround (humanChoice, computerChoice) {
 // calls playground function to run inputing the return or humanChoice and computerChoice value as arguement
 playround(humanSelection, computerSelection);
 
+function playgame (){
+   playround(humanSelection, computerSelection);
+   playround(humanSelection, computerSelection);
+   playround(humanSelection, computerSelection);
+   playround(humanSelection, computerSelection);
+   playround(humanSelection, computerSelection);
+    
+}
+playgame()
 
 
