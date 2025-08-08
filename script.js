@@ -1,8 +1,8 @@
-console.log("Hello World")
+// console.log("Hello World")
 function getComputerChoice() {
     // getenerate a random number between 1-3
     let randomNumber = Math.floor(Math.random()* 3) + 1;
-    console.log(randomNumber);
+    // console.log(randomNumber);
     // sets computer possible choices
     let choice_1 = "Rock";
     let choice_2 = "paper";
@@ -23,7 +23,7 @@ function getComputerChoice() {
     console.log("Computer choose " + computerChoice)
     return computerChoice;
 }
-getComputerChoice()
+// getComputerChoice()
 // Get human choice via prompt and shoiaves it into the humanChoice Variable
 function getHumanChoice() {
     let humanChoice = prompt("enter your choice");
@@ -43,12 +43,13 @@ let computerScore = 0;
 function playround (humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
-    // sets condition for who win the Rock Paper Scissors game and prints the winner in the console
+// sets condition for who win the Rock Paper Scissors game and prints the winner in the console
     if (humanChoice === computerChoice) {
         console.log("It's a draw!"); }
         else if (humanChoice === "rock" && computerChoice === "paper") {
         console.log("You lose paper beats rock");
-        // update Computer score when computer wins a round
+
+// update Computer score when computer wins a round
         computerScore ++;
     }   else if (humanChoice === "paper" && computerChoice === "scissors"){
         console.log("You lose scissors beats paper");
@@ -77,18 +78,28 @@ function playround (humanChoice, computerChoice) {
     console.log("Score: Human = " + humanScore + ", Computer = " + computerScore);
 }
 // pass and stores the return value of human and computer choice into the variable "humanSelection" and "computerSelection"
- const humanSelection = getHumanChoice();
- const computerSelection = getComputerChoice();
+//  const humanSelection = getHumanChoice();
+//  const computerSelection = getComputerChoice();
 // calls playground function to run inputing the return or humanChoice and computerChoice value as arguement
-playround(humanSelection, computerSelection);
+// playround(humanSelection, computerSelection);
 
-function playgame (){
-   playround(humanSelection, computerSelection);
-   playround(humanSelection, computerSelection);
-   playround(humanSelection, computerSelection);
-   playround(humanSelection, computerSelection);
-   playround(humanSelection, computerSelection);
-    
+// Calls the play round function 5 times to allow the player play 5 rounds with the computer and print the results for each round
+function playgame () {
+// let humanScore = 0;
+// let computerScore = 0;
+   playround(getHumanChoice(), getComputerChoice());
+   playround(getHumanChoice(), getComputerChoice());
+   playround(getHumanChoice(), getComputerChoice());
+   playround(getHumanChoice(), getComputerChoice());
+   playround(getHumanChoice(), getComputerChoice());
+   
+   if (humanScore === computerScore){
+        console.log("It's a Draw no Winner Emerge")
+    } else if (humanScore > computerScore){
+        console.log("Congratulations you were victorious")
+    } else if (humanScore < computerScore){
+        console.log("Too bad Computer wins")
+    }
 }
 playgame()
 
